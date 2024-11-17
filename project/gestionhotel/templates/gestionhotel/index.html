@@ -1,0 +1,1025 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="{% static 'gestionhotel/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'gestionhotel/css/node_modules/bulma/css/bulma.min.css' %}">
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+<body>
+
+    
+    <header class="">
+        <nav class="navbar is-fixed-top has-shadow is-transparentar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <a href="">
+                        <h1 class="is-size-4 has-text-danger has-text-weight-bold ">H<span class="has-text-dark">PIN</span></h1>
+                    </a>
+                </div>
+                
+                <a role="button" class="navbar-burger has-text-primary" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+    
+            </div>
+    
+            <div class="navbar-menu" id="navMenu">
+                <ul class="navbar-end">
+                    
+                    <li class="navbar-item">
+                        <a href="{% url 'gestionhotel:index' %}" class="has-text-dark is-size-6 has-text-weight-semibold ">
+                            HOME
+                        </a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                        <a href="" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                            USER
+                        </a>
+                        
+                        <div class="navbar-dropdown">
+                            <a href="{% url 'utilisateurs:login_users' %}" class="navbar-item has-text-dark is-size-6 is-selected has-background-success">
+                                LOGIN
+                            </a>
+                            <hr class="navbar-divider has-text-success">
+                            <a href="{% url 'utilisateurs:logout_users' %}" class="navbar-item has-text-dark is-size-6" >
+                                LOG OUT
+                            </a>
+                            <hr class="navbar-divider has-text-success">
+                            <a href="{% url 'utilisateurs:update_user' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                                UPDATE
+                            </a>
+                            <hr class="navbar-divider has-text-success">
+                            <a href="{% url 'utilisateurs:delete_user' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                                SUPPRIMER COMPTE
+                            </a>
+                            <hr class="navbar-divider has-text-success">
+                            <a href="{% url 'utilisateurs:viewreservation' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                                VIEWS RESERVATION
+                            </a>
+                        </div>
+    
+                    </div>
+                    
+                    {% else %}
+                    <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                        <a href="" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                            USER
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="{% url 'utilisateurs:login_users' %}" class="navbar-item has-text-dark is-size-6 is-selected has-background-success">
+                                LOGIN
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+    
+                    <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                        <a href="{% url 'gestionhotel:services' %}" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                            SERVICES
+                        </a>
+                        <a href="{% url 'gestionhotel:contact' %}" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                            CONTACT
+                        </a>
+                        <a href="{% url 'gestionhotel:about' %}" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                            A BOUT
+                        </a>
+    
+                    </div>
+    
+                    
+                    
+    
+                    
+    
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="section my">
+            <div class="container  mt-6">
+                <h1 class="is-size-1 is-family-primary has-text-weight-semibold has-text-centered mt-1 has-text-white">L'HOTEL <span class="has-text-danger">PIN</span></h1>
+            </div>
+            <div class="container">
+                <h3 class="is-size-1 is-family-primary has-text-weight-semibold has-text-centered has-text-white">We care about your health</h3>
+                <p class="has-text-weight-normal has-text-centered mt-4 has-text-white">
+                    nesciunt dolor suscipit fugiat quae accusamus quaerat voluptatibus? Consequatur quae pariatur voluptates, odio ullam optio! <br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus possimus vero quidem, voluptas, nisi dolore <br>     
+                    
+                </p>
+            </div>
+    
+            <div class="container mt-3">
+                <div class="columns">
+                    <div class="column ">
+                        
+                        <a href="{% url 'gestionhotel:contact' %}" class="button  has-text-white is-hovered is-danger">CONTACT</a>
+                        <a href="{% url 'gestionhotel:services' %}" class="button  ml-3 has-text-white is-hovered is-danger">SERVICE</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="section  ">
+
+        <div class="columns">
+            <div class="column ">
+                <h2 class=" has-text-danger is-size-3 has-text-weight-semibold has-text-white has-text-centered">Ours Best Service Propose For Yours <br> Solution </h2>
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="container ">
+            <div class="columns">
+                <div class="column">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">    
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-hotel fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="column ">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="column">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="section  ">
+
+
+
+        <div class="container ">
+            <div class="columns">
+                <div class="column">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">    
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-hotel fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="column ">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="column">
+                    <div class="card has-background-white">
+                        <div class="card-image has-text-centered">
+                            <div class="icon is-large">
+                                <i class="fas fa-bed fas fa-lg has-text-danger"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-content has-text-centered">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus accusantium ab sapiente cum commodi eius amet, deserunt reprehenderit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section mt-5">
+        <div class="container">
+
+            <h1 class="has-text-centered has-text-weight-semibold is-size-4 mb-3 has-text-danger">CHAMBRE CATEGORIE VIP</h1>
+            
+            <div class="columns">
+                {% for vip in chambre1 %}
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{vip.image.url}}" alt="imgHotel" class="taille">
+                            </div>
+            
+                            <div class="card-content">
+                                <div class="content">
+                                    <p class="mb-3"> <span>{{vip.id}}. CATEGORIE VIP</span> <br>{{ vip.description }}</p><br>
+                                    <p class="has-text-danger">PRIX {{ vip.prix }}</p>
+                                    
+                                </div>
+                                
+                                <div class="button is_outline is-toggle-rounded is-success is-small has-text-white">
+                                    <a href="{% url 'utilisateurs:reservation' vip.id user.id %}" type="button is-black" class="is-small has-text-white">RESERVER</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+
+
+
+            
+
+
+            
+
+
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="section mt-5">
+        <div class="container">
+
+            <h1 class="has-text-centered has-text-weight-semibold is-size-4 mb-3 has-text-danger">CHAMBRE CATEGORIE NORMALE</h1>
+            
+            <div class="columns">
+                {% for vip in chambre2 %}
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{vip.image.url}}" alt="imgHotel" class="taille">
+                            </div>
+            
+                            <div class="card-content">
+                                <div class="content">
+                                    <p class="mb-3"> <span>{{vip.id}}. CATEGORIE VIP</span> <br>{{ vip.description }}</p><br>
+                                    <p class="has-text-danger">PRIX {{ vip.prix }}</p>
+                                    
+                                </div>
+                                
+                                <div class="button is_outline is-toggle-rounded is-success is-small has-text-white">
+                                    <a href="{% url 'utilisateurs:reservation' vip.id user.id %}" type="button is-black" class="is-small has-text-white">RESERVER</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+
+
+
+            
+
+
+            
+
+
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section">
+        <div class="container has-background-success bordure">
+
+            <div class="grid">
+
+
+                <div class="cell ">
+                    
+
+                    <div class="hero">
+
+                        <div class="hero-body has-text-white">
+                            <h2 class="has-text-weight-semibold is-size-3">Nos Specialiter</h2>
+                            <p class="subtitle mb-3 has-text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum aliquam suscipit neque eligendi voluptatem.</p>
+                            <p class="subtitle mb-3 has-text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum aliquam suscipit neque eligendi voluptatem ue eligendi voluptatem.</p>
+
+                            <div class="breadcrumb has-row-separator">
+                                <ul>
+                                    <li class="has-text-white">
+                                        <a href="" class="has-text-white">Service chambre</a>
+                                    </li>
+                                    <li class="has-text-white">
+                                        <a href="" class="has-text-white">Service chambre</a>
+                                    </li>
+
+                                    <li class="has-text-white">
+                                        <a href="" class="has-text-white">Service chambre</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+
+                                <a href="" class="button has-background-danger  has-text-white">LEARN MORE</a>
+
+                            </div>
+                        </div>
+                        
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section">
+        <div class="container">
+
+            <h1 class="has-text-centered is-size-4 has-text-weight-semibold mb-5 has-text-success">OURS HOTEL IN MANY CONTRY</h1>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'gestionhotel/img//maison3.jpg' %}" alt="">
+                        </div>
+        
+                        <div class="card-content">
+                            <div class="media">
+                                <span>Janvier 10/102024</span>
+                            </div>
+        
+                            <div class="content">
+                                <p class="has-text-weight-medium">10 Foods To Avoid For Your <br> Heart Health</p>
+                                <p>A, obcaecati sequi,deserunt nam possimus deserunt nam possimus </p>
+                            </div>
+
+                            <a href="" class="button is-success is-medium">
+                                <i class="fas fa-plus has-text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'gestionhotel/img//maison3.jpg' %}" alt="">
+                        </div>
+        
+                        <div class="card-content">
+                            <div class="media">
+                                <span>Janvier 10/102024</span>
+                            </div>
+        
+                            <div class="content">
+                                <p class="has-text-weight-medium">10 Foods To Avoid For Your <br> Heart Health</p>
+                                <p>A, obcaecati sequi,deserunt nam possimus deserunt nam possimus </p>
+                            </div>
+
+                            <a href="" class="button is-success is-medium">
+                                <i class="fas fa-plus has-text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'gestionhotel/img//maison3.jpg' %}" alt="">
+                            
+                        </div>
+        
+                        <div class="card-content">
+                            <div class="media">
+                                <span>Janvier 10/102024</span>
+                            </div>
+        
+                            <div class="content">
+                                <p class="has-text-weight-medium">10 Foods To Avoid For Your <br> Heart Health</p>
+                                <p>A, obcaecati sequi,deserunt nam possimus deserunt nam possimus </p>
+                            </div>
+
+                            <a href="" class="button is-success is-medium">
+                                <i class="fas fa-plus has-text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+            </div>
+
+
+            
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section ">
+
+
+        <div class="container">
+
+
+            <div class="pagination is-centered ">
+
+
+                
+
+
+                <ul class="pagination-list">
+
+                    <li>
+                        <a href="{% url 'gestionhotel:album_one' %}" class="pagination-link has-text-success ">
+                            1
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'gestionhotel:album_deux' %}" class="pagination-link has-text-success">
+                            2
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gestionhotel:galerie' %}" class="pagination-link has-text-success">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'gestionhotel:galerie' %}" class="pagination-link has-text-success">
+                            ....
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section has-background-danger mb-6">
+
+        <div class="container">
+
+            <div class="grid">
+                <div class="cell">
+                    <p class="has-text-white">OUR NEWSLETTERS</p>
+                    <h2 class="is-size-3 has-text-weight-bold has-text-white">Subscrib to get more updates </h2>
+                </div>
+
+                <div class="cell mr-">
+
+                    <form action="" method="post">
+
+                        <div class="field">
+                            <div class="control has-icons-right">
+                                <input type="text" class="input has-background-danger has-text-white" placeholder="Your name">
+                                <span class="icon is-medium is-right">
+                                    <input class="button has-background-success has-text-white curseur" type="submit" value="subscrib">
+                                        
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="{% static 'gestionhotel/js/style.js' %}"></script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer has-background-grey-darker mb-0 has-text-centered ">
+        <div class="section">
+            
+            <div class="container grid">
+                <div class="cell">
+
+                    <div class="content">
+                        <h5 class="has-text-success has-text-weight-medium">Unbrew</h2>
+                        <p>
+                            A small river named Duden flows by <br>
+                            their place and supplies it with the <br> 
+                            necessary regellalia
+                        </p>
+
+                        <div>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon has-icons-left">
+                                    <i class="fab fa-twitter has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-facebook-f has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-instagram has-text-white"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            
+
+                <div class="cell">
+
+                    <div class="content">
+                        <h5 class="has-text-success has-text-weight-medium">Adresse Us</h2>
+                        <p>
+                            A small river named Duden flows by <br>
+                            their place and supplies it with the <br> 
+                            necessary regellalia
+                        </p>
+
+                        <div>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon has-icons-left">
+                                    <i class="fab fa-twitter has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-facebook-f has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-instagram has-text-white"></i>
+                                </div>
+                            </button>
+                        </div>
+
+            
+                    </div>
+                </div>
+
+
+                <div class="cell">
+
+                    <div class="content">
+                        <h5 class="has-text-success has-text-weight-medium">Adresse Us</h2>
+                        <p>
+                            A small river named Duden flows by <br>
+                            their place and supplies it with the <br> 
+                            necessary regellalia
+                        </p>
+
+                        <div>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon has-icons-left">
+                                    <i class="fab fa-twitter has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-facebook-f has-text-white"></i>
+                                </div>
+                            </button>
+                            <button class="button  is-outline  is-toggle-rounded is-success">
+                                <div class="icon">
+                                    <i class="fab fa-instagram has-text-white"></i>
+                                </div>
+                            </button>
+                        </div>
+
+            
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <p class="has-text-white">
+            This webISte desing by Boaz kalonji 
+        </p>
+    </footer>
+</body>
+</html>

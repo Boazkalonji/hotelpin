@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block titre %}
+
+    UPDATE
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section class="section">
+
+
+        <div class="container">
+
+            <h1 class="has-text-success has-text-centered is-size-3 has-text-weight-semibold my-5">
+                MODIFICTAION COMPTE
+            </h1>
+
+            <form action="" method="post">
+
+                {% csrf_token %}
+
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="text" class="input has-background-white-bis " placeholder="NOM" name="nom" required value="{{ user.username }}">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                </div>
+
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="password" class="input has-background-white-bis " placeholder="MOT DE PASSE" name="mdp" required value="{{ user.password }}">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="text" class="input has-background-white-bis " placeholder="POSTNOM" name="postnom" required value="{{ user.last_name }}">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-solid fa-unlock"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="control has-icons-left mb-5">
+
+                    <input type="text" class="input has-background-white-bis " placeholder="PRENOM" name="prenom" required value="{{ user.first_name }}">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-solid fa-unlock"></i>
+                    </span>
+
+                </div>
+
+                <div class="control has-icons-left mb-5">
+
+                    <input type="text" class="input has-background-white-bis " placeholder="EMAIL" name="email" required value="{{ user.email }}">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-solid fa-unlock"></i>
+                    </span>
+
+                </div>
+
+                <div class="control has-icons-left mb-5">
+
+                    <input type="password" class="input has-background-white-bis " required placeholder="CONFIRMATION MOT DE PASSE" name="confirme_mdp">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-solid fa-unlock"></i>
+                    </span>
+
+                </div>
+
+                <input type="submit" class="has-text-centered button is-success has-text-white" value="Sing up">
+
+            </form>
+
+
+
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

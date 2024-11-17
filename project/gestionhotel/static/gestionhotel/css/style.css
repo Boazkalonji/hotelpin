@@ -1,0 +1,35 @@
+.my{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.7)), url('../img/christiana.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    object-fit: cover;
+    top: 0;
+    text-align: center;
+}
+
+
+.taille{
+    border-radius:  15px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.bordure{
+    border-radius: 15px;
+}
+
+
+
+.curseur{
+    cursor: pointer;
+}
+
+
+#input_id{
+    display: none;
+    background-color: blueviolet;
+}

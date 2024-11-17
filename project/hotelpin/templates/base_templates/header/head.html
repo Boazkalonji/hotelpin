@@ -1,0 +1,115 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base_css/node_modules/bulma/css/bulma.css' %}">
+   
+    
+</head>
+
+
+<header class="">
+    <nav class="navbar is-fixed-top has-shadow is-transparentar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a href="{% url 'gestionhotel:index' %}">
+                    <h1 class="is-size-4 has-text-danger has-text-weight-bold ">H<span class="has-text-dark">PIN</span></h1>
+                </a>
+            </div>
+            
+            <a role="button" class="navbar-burger has-text-primary" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                
+                <li class="navbar-item">
+                    <a href="{% url 'gestionhotel:index' %}" class="has-text-dark is-size-6 has-text-weight-semibold ">
+                        HOME
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                    <a href="" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                        USER
+                    </a>
+                    
+                    <div class="navbar-dropdown">
+                        <a href="{% url 'utilisateurs:login_users' %}" class="navbar-item has-text-dark is-size-6 is-selected has-background-success">
+                            LOGIN
+                        </a>
+                        <hr class="navbar-divider has-text-success">
+                        <a href="{% url 'utilisateurs:logout_users' %}" class="navbar-item has-text-dark is-size-6" >
+                            LOG OUT
+                        </a>
+                        <hr class="navbar-divider has-text-success">
+                        <a href="{% url 'utilisateurs:update_user' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                            UPDATE
+                        </a>
+                        <hr class="navbar-divider has-text-success">
+                        <a href="{% url 'utilisateurs:delete_user' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                            SUPPRIMER COMPTE
+                        </a>
+                        <hr class="navbar-divider has-text-success">
+                        <a href="{% url 'utilisateurs:viewreservation' user.id %}" class="navbar-item has-text-dark is-size-6" >
+                            VIEWS RESERVATION
+                        </a>
+                    </div>
+
+                </div>
+                
+                {% else %}
+                <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                    <a href="" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                        USER
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="{% url 'utilisateurs:login_users' %}" class="navbar-item has-text-dark is-size-6 is-selected has-background-success">
+                            LOGIN
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="navbar-item has-dropdown is-hoverable has-text-success">
+                    <a href="{% url 'gestionhotel:services' %}" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                        SERVICES
+                    </a>
+                    <a href="{% url 'gestionhotel:contact' %}" class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                        CONTACT
+                    </a>
+                    <a href="{% url 'gestionhotel:about' %}"  class="navbar-link is-arrowless has-text-dark is-size-6 has-text-weight-semibold">
+                        A BOUT
+                    </a>
+
+                </div>
+
+                
+                
+
+                
+
+            </ul>
+        </div>
+    </nav>
+
+
+</header>
+
+
+
+
+  
+
+<script src="{% static 'base_js/head.js' %}"></script>
+</html>

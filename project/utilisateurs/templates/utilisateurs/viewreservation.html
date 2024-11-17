@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block titre %}
+
+    VIEW RESERVATION
+    
+ 
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section class="section ">
+        <div class="container">
+  
+            <h1 class=" mt-3 mb-3 is-6 has-text-weight-semibold is-capitalized">Voici le tableau de  vos reservation Mr/Md {{ user.username }}
+                {{user.last_name}}  dans notre Hotel </h1>
+            <div class="table-container is-centered">
+                <table class="table is-striped ">
+                    <thead>
+                        <tr>
+                            <th  class="has-text-success">numero</th>
+                            <th  class="has-text-success">date debut</th>
+                            <th  class="has-text-success">date fin</th>
+                            <th  class="has-text-success">durer</th>
+                            <th  class="has-text-success">numero chambre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            
+                        {% for i in reservation %}
+                            <tr>
+                                <td class="has-text-danger">{{i.id}}</td>
+                                <td>{{i.date_debut}}</td>
+                                <td>{{i.date_fin}}</td>
+                                <td>{{i.durer}}</td>
+                                <td>{{i.chambre_id}}</td>
+                            </tr>
+
+                        {% endfor %}
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

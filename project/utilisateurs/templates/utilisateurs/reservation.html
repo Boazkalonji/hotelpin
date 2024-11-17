@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block titre %}
+
+    RESERVATION
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section class="section">
+
+
+        <div class="container">
+
+            <h1 class="has-text-success has-text-centered is-size-3 has-text-weight-semibold my-5">
+                RESERVATION
+            </h1>
+
+            <form action="" method="post">
+
+                {% csrf_token %}
+
+                <fieldset class="is-size-5 has-text-weight-medium">
+                    INFORMATIONS SUR LE CLIENT
+                </fieldset>
+                <hr class="has-background-success">
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="text" class="input has-background-white-bis " name="user_id" value="{{user.id}}" placeholder="{{user.username}}" id="input_id">
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                </div>
+
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="text" class="input has-background-white-bis " name="name" value="{{user.username}}" placeholder="{{user.username}}" readonly >
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                </div>
+
+                <div class="control has-icons-left mb-5">
+
+                    <input required type="email" class="input has-background-white-bis " placeholder="{{user.email}}" value="{{user.email}}" name="email" readonly>
+
+                    <span class="icon is-medium is-left has-text-success">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+
+                </div>
+
+
+                
+
+                <fieldset class="is-size-5 has-text-weight-medium mb-3">
+                    INFORMATIONS SUR LE SEJOUR
+                </fieldset>
+                <hr class="has-background-success">
+                
+
+                
+                <div class="grid">
+
+
+                    <div class="cell">
+                        <div class="field ">
+                            <label for="" class="label ">Numero chambre</label>
+        
+                            <div class="control has-icons-left">
+        
+                                <input required type="number" class=" input has-background-white-bis has-text-black-ter" placeholder="chambre" value="{{chambre}}" name="chambre" readonly>
+            
+                                <span class="icon is-medium is-left has-text-success">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+            
+                                
+                            </div>
+        
+                        </div>
+        
+                        
+                    </div>
+
+                    <div class="cell">
+                        <div class="select">
+                            <label for="" class="label ">Comptes</label>
+                            <select name="compte" required >
+
+                                {% for c in compte %}
+                                    <option value="{{c.pk}}">{{c.liblle}}</option>
+                                {% endfor %}
+
+                                
+                                
+                            </select>
+                            
+        
+                        </div>                        
+                    </div>
+
+                    <div class="cell">
+                        <div class="field ">
+                            <label for="" class="label ">Montant</label>
+        
+                            <div class="control has-icons-left">
+        
+                                <input required type="number" class=" input has-background-white-bis " placeholder="{{ montant.prix }}" value="{{montant.prix}}" name="prix" readonly>
+            
+                                <span class="icon is-medium is-left has-text-success">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+            
+                                
+                            </div>
+        
+                        </div>
+        
+                        
+                    </div>
+
+                    <div class="cell">
+                        <div class="field ">
+                            <label for="" class="label ">Numero compte</label>
+        
+                            <div class="control has-icons-left">
+        
+                                <input required type="text" class=" input has-background-white-bis " placeholder="Numero comptes"  name="num_compte">
+            
+                                <span class="icon is-medium is-left has-text-success">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+            
+                                
+                            </div>
+        
+                        </div>
+        
+                        
+                    </div>
+
+                    <div class="cell">
+                        <div class="field ">
+                            <label for="" class="label ">Date debut</label>
+        
+                            <div class="control has-icons-left">
+        
+                                <input required type="date" class=" input has-background-white-bis " placeholder="Date debut" name="date_debut">
+            
+                                <span class="icon is-medium is-left has-text-success">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+            
+                                
+                            </div>
+        
+                        </div>
+        
+                        
+                    </div>
+
+                    <div class="cell">
+                        <div class="field ">
+                            <label for="" class="label ">Date fin</label>
+        
+                            <div class="control has-icons-left">
+        
+                                <input required type="date" class=" input has-background-white-bis " placeholder="Date fin" name="date_fin">
+            
+                                <span class="icon is-medium is-left has-text-success">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+            
+                                
+                            </div>
+        
+                        </div>
+                    </div>
+
+                    
+                 
+                </div>
+
+
+
+
+
+
+        
+
+
+                <input type="submit" class="has-text-centered button is-success has-text-white" value="J'ai reserve">
+
+            </form>
+
+
+
+        </div>
+
+
+    </section>
+
+
+    
+
+    {% if mgs %}
+
+        <script>
+            var mgs = '{{mgs}}';
+            alert(mgs);
+        </script>
+
+    {% endif %}
+
+
+    {% if text %}
+
+        <script>
+            var text = '{{text}}';
+            alert(text);
+        </script>
+
+    {% endif %}
+
+
+    {% if cxt_msg %}
+
+        <script>
+            var cxt_msg= '{{cxt_msg}}';
+            alert(cxt_msg);
+        </script>
+
+    {% endif %}
+
+    {% if erreur_date_inf %}
+
+        <script>
+            var erreur_date_inf= '{{erreur_date_inf}}';
+            alert(erreur_date_inf);
+        </script>
+
+    {% endif %}
+
+{% endblock %}

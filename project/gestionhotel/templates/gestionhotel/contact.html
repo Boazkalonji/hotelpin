@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block titre %}
+
+    CONTACT
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section class="section mt-6">
+        <div class="container">
+
+
+
+            <h1 class="has-text-weight-semibold is-size-3 has-text-success">Contactez Nous</h1>
+
+            <h4  class="has-text-weight-semibold is-size-4">
+
+                Besoin d'aie ou de suggestion ? Faite-le <br> nous savoir.
+
+
+
+            </h4>
+            <hr class="has-background-success">
+
+
+            <p>
+                Get in touch with us using the phone number or email address provided. <br>
+                Alternatively, complete the enquiry form below and our team will contact you. <br>
+            </p>
+            
+            <div class="grid">
+                <div class="cell">
+                    <p class="has-text-weight-medium">Phone number</p>
+                    <p> <a href="">+243 82 740 223</a> </p>
+                </div>
+
+                <div class="cell">
+                    <p class="has-text-weight-medium">Email</p>
+                    <p><a href="">hotelpin@gmail.com</a></p>
+                </div>
+            </div>
+            <hr class="has-background-success">
+
+
+
+
+            <form action="" method="post">
+
+                {% csrf_token %}
+
+                <div class="grid">
+
+
+                    <div class="cell">
+                        <div class="field">
+                            <label for="" class="label">Sujet</label>
+                            <div class="control has-icons-right">
+                                <input required type="text" class="input has-background-white-ter" name="sujet" placeholder="Enter your Name">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-file-signature"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cell">
+                        <div class="field">
+                            <label for="" class="label">Your Name</label>
+                            <div class="control has-icons-right">
+                                <input required type="text" class="input has-background-white-ter" name="name" placeholder="Enter your Name">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-file-signature"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="cell">
+                        <div class="field">
+                            <label for="" class="label">Last Name</label>
+                            <div class="control has-icons-right">
+                                <input required type="text" class="input has-background-white-ter" name="postnom" placeholder="Enter your Name">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-file-signature"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="cell">
+                        <div class="field">
+                            <label for="" class="label">Email</label>
+                            <div class="control has-icons-right">
+                                <input required type="email" name="email" class="input has-background-white-ter" placeholder="Enter your Name">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="grid">
+
+                    <div class="cell">
+                        <div class="field">
+                            <div class="control">
+                                <textarea name="ee" placeholder="Your Message" rows="4" cols="50" class="textarea has-background-white-ter "></textarea>  
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <input type="submit" class="is-fixed-bottom button has-background-success has-text-white" value="Valider">
+            </form>
+
+
+
+
+
+
+        </div>
+    </section>
+
+
+{% endblock %}
